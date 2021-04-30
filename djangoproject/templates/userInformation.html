@@ -1,0 +1,11 @@
+{%extends 'layout.html' %}
+
+{% block content %}
+<title>ข้อมูลผู้ใช้</title>
+<a>ชื่อผู้ใช้: {{user.first_name}}</a><br>
+<a>นามสกุล: {{user.last_name}}</a><br>
+<a class="previous">ประวัติส่วนตัว</a><br>
+<a class="previous">ประวัติการรักษา</a><br>
+<a class="previous">ตารางนัดแพทย์</a><br>
+<a class="previous">ยา</a><br>
+{% endblock%}

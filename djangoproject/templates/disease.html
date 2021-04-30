@@ -1,0 +1,30 @@
+{%extends 'layout.html' %}
+<style>
+    .column {
+      float: left;
+      justify-content: center;
+      width: 33.33%;
+      padding: 10px;
+      height: 300px;
+      text-align: center;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+</style>
+{% block content %}
+<title>ข้อมูลโรค</title>
+<div class="row">
+    {% for data in datas %}
+        <div class="column">
+            <h1>{{data.name}}</h1>
+            <img src={{data.imageUrl}}
+            width="200" height="115">
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock%}

@@ -1,0 +1,53 @@
+{%extends 'layout.html' %}
+<style>
+  .column {
+    float: left;
+    justify-content: center;
+    width: 20%;
+    padding: 10px;
+    height: 300px;
+    text-align: center;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raksa</title>
+</head>
+<h1>หน้าหลัก</h1>
+<img src="https://m.thaiware.com/upload_misc/software/2018_10/thumbnails/14122_181029093421N1.jpg" alt="รูป" height="300" width="1200">
+<p>ข้อมูลโรค</p>
+<div class="row">
+  <div class="column">
+    <p>โรค1</p>
+    <img src="https://www.vejthani.com/wp-content/uploads/2019/12/shutterstock_1168123948-copy-e1576571078942.jpg" width="200" height="200">
+  </div>
+  <div class="column">
+    <p>โรค1</p>
+    <img src="https://www.vejthani.com/wp-content/uploads/2019/12/shutterstock_1168123948-copy-e1576571078942.jpg" width="200" height="200">
+  </div>
+  <div class="column">
+    <p>โรค1</p>
+    <img src="https://www.vejthani.com/wp-content/uploads/2019/12/shutterstock_1168123948-copy-e1576571078942.jpg" width="200" height="200">
+  </div>
+  <div class="column">
+    <p>โรค1</p>
+    <img src="https://www.vejthani.com/wp-content/uploads/2019/12/shutterstock_1168123948-copy-e1576571078942.jpg" width="200" height="200">
+  </div>
+  <div class="column">
+    <p>โรค1</p>
+    <img src="https://www.vejthani.com/wp-content/uploads/2019/12/shutterstock_1168123948-copy-e1576571078942.jpg" width="200" height="200">
+  </div>
+</div>
+
+
+{% endblock%}
