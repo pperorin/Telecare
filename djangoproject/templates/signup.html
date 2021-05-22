@@ -1,0 +1,99 @@
+{%extends 'layout.html' %} {% block content %}
+
+<title>Sign Up</title>
+<div class="headSignup">
+  <div class="Topic">Create Profile</div>
+  <div class="userLogo">
+    <img
+      src="https://www.logolynx.com/images/logolynx/4b/4beebce89d681837ba2f4105ce43afac.png"
+      width="50"
+      height="50"
+    />
+  </div>
+</div>
+
+{% if messages %}
+<div class="alert alert-danger" role="alert">
+  {% for message in messages %}
+  <b>{{message}}</b>
+  {% endfor %}
+</div>
+{% endif %}
+<form method="POST" action="signup">
+  {% csrf_token %}
+  <label for="fname">Username</label>
+  <input
+    type="text"
+    placeholder="Enter your name"
+    id="username"
+    name="username"
+    value="tanza007"
+  />
+  <label for="password">Password</label>
+  <br />
+  <input
+    type="password"
+    placeholder="Enter your password"
+    id="password"
+    name="password"
+    value="007tanza"
+  />
+  <!--แก้ขนาดกล่องนี้ให้หน่อย-->
+  <br />
+  <label for="rename">Re-Password</label>
+  <br />
+  <input
+    type="password"
+    id="repassword"
+    placeholder="Match your password"
+    name="repassword"
+    value="007tanza"
+  />
+  <!--แก้ขนาดกล่องนี้ให้หน่อย-->
+  <br />
+  <br />
+  <label for="fname">First Name</label>
+  <input
+    type="text"
+    placeholder="Enter your first name"
+    id="fname"
+    name="fname"
+    value="John"
+  />
+  <label for="lname">Last Name</label>
+  <input
+    type="text"
+    placeholder="Enter your last name"
+    id="lname"
+    name="lname"
+    value="Doe"
+  />
+  <label for="email">Email</label>
+  <input
+    type="text"
+    placeholder="Enter your email"
+    id="email"
+    name="email"
+    value=""
+  />
+  <div class="gender details">
+    <span class="gender-title">Gender</span>
+    <div class="category">
+      <label for="">
+        <span class="dot one"></span>
+        <span class="gender">Male</span>
+      </label>
+      <label for="">
+        <span class="dot one"></span>
+        <span class="gender">Female<span>
+      </label>
+      <label for="">
+        <span class="dot one"></span>
+        <span class="gender">Others</span>
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="button button1" ,>Submit</button>
+</form>
+
+{% endblock%}

@@ -1,0 +1,62 @@
+{% load static %}
+<link rel="stylesheet" href="{%static 'css/styleMain.css' %}">
+{% block content %}
+
+
+{% comment %} <title>Sign in</title> {% endcomment %}
+        {% if messages %}
+        <div class="alert alert-danger" role="alert">
+          {% for message in messages %}
+          <b>{{message}}</b>
+          {% endfor %}
+        </div>
+        {% endif %}
+      
+  <body>
+        <div class="login-wrapper">
+
+          <div class="login-left">
+            <img src="https://wallpaperaccess.com/full/279547.jpg" alt="">
+            <div class="h1">RAKSA APP </br>Click to continue</div>
+            <div class="above-text">PLEASE ENTER</br> AN INFORMATION</div>
+          </div>
+
+
+          <div class="login-right-cover">
+            <div>
+              <form class="login-right" method="POST" action="signin">
+                {% csrf_token %}
+                  
+                <div class="logo">
+                  <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDXzN01XnCbIZIdJ2bjrWJydk7pVE--8wZXQ&usqp=CAU" width=80 height=80> 
+                </div>
+
+                <div class="h3">RAKSA</div>  
+
+                <div class="form-group">
+                  <label for="fname">Username :</label><br>
+                  <input type="text" id="username" name="username" value=""><br>
+                </div>
+
+                <div class="form-group">
+                  <label stlye="Pass" for="fname">Password :</label><br>
+                  <input type="password" id="password" name="password" value=""><br>
+                </div>
+
+                <div class="button-area">
+                  <button type="submit" class="btn btn-primary">Login</button>
+                  <div class="No_acc">Don't have an account yet?<div>
+                  <button class="btn btn-secondary"><a href="/signup">Signup</a></button>
+                </div>
+              </form>
+            </div>
+              {% comment %} ------------------------------------------------------------------- {% endcomment %}          
+          </div>
+        </div> 
+
+  </body>
+
+  <script src="{%static 'js/signinScript.js' %}"></script>   
+  
+</div>
+{% endblock %}

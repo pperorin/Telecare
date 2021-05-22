@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400:700');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #3E5151, #decba4);
+    overflow: hidden;
+}
+
+input {
+    font-family: inherit;
+    border: 0;
+    border-bottom: 1px solid #aaa;
+    font-size: 16px;
+    color: #000;
+    border-radius: 0;
+}
