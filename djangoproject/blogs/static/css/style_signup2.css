@@ -25,6 +25,10 @@
 
 /* End of create profile title */
 
+.container_py_4{
+  background:white;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -43,4 +47,4 @@ form {
   border-radius: 5px;
 }
 
-/* ddd */
+

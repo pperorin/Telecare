@@ -256,7 +256,7 @@ label {
 }
 
 .btn-secondary:hover {
-  background-color: #CC0000;
+  background-color: #cc0000;
   box-shadow: 0px 10px 15px rgba(226, 59, 59, 0.4);
   color: #fff;
   transform: translateY(-4px);
