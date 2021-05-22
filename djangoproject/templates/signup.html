@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {%extends 'layout.html' %} {% block content %}
 
 <title>Sign Up</title>
@@ -97,3 +98,40 @@
 </form>
 
 {% endblock%}
+=======
+{%extends 'layout.html' %}
+
+{% block content %}
+<title>Sign Up</title>
+<h1>Create Profile</h1>
+{% if messages %}
+  <div class="alert alert-danger" role="alert">
+    {% for message in messages %}
+      <b>{{message}}</b>
+    {% endfor %}
+  </div>
+  {% endif %}
+<form method="POST" action="signup">
+{% csrf_token %}
+<label for="fname">Username</label>
+<input type="text" id="username" name="username" value="tanza007">
+<label for="password">Password</label>
+<br>
+<input type="password" id="password" name="password" value="007tanza"> <!--แก้ขนาดกล่องนี้ให้หน่อย-->
+<br>
+<label for="rename">Re-Password</label>
+<br>
+<input type="password" id="repassword" name="repassword" value="007tanza"> <!--แก้ขนาดกล่องนี้ให้หน่อย-->
+<br>
+<br>
+<label for="fname">First Name</label>
+<input type="text" id="fname" name="fname" value="John">
+<label for="lname">Last Name</label>
+<input type="text" id="lname" name="lname" value="Doe">
+<label for="email">Email</label>
+<input type="text" id="email" name="email" value=''>
+<button type="submit" class="button button1",>Search</button>
+</form>
+
+{% endblock%}
+>>>>>>> 73f782b604cd8150903770804c064806c4a2ec05
