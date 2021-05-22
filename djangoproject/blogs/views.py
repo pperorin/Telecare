@@ -10,10 +10,6 @@ def home(request):
     return render(request, 'index.html')
 
 def addForm(request):
-    personnel = open('text/personnel.txt', 'r', encoding='utf8')
-    name = personnel.readlines()
-    name = name[0]
-    personnel.close()
     if request.method == 'POST':
         date = request.POST['date']
         time = request.POST['time']
@@ -30,15 +26,16 @@ def addForm(request):
             if j[0] == date:
                 if j[1] == time:
                     # คิวที่จะจองเต็ม
-                    return render(request, 'addForm.html', {'press': 2})
+                    messages.info(request,'คิวเต็ม')
+                    return render(request, 'addForm.html')
         qform.enQ(date + '_' + time + '_' + symptom + '_' + number + '\n')
         ans = ''
         for i in qform.show():
             ans += i
         form = open('text/form.txt', 'w', encoding='utf8')
         form.write(ans)
-        return render(request, 'addForm.html', {'press': 1})
-    return render(request, 'addForm.html', {'name': name})
+        return render(request, 'addForm.html')
+    return render(request, 'addForm.html')
 
 
 def signup(request):
@@ -49,8 +46,6 @@ def signup(request):
         fname = request.POST['fname']
         lname = request.POST['lname']
         email = request.POST['email']
-        #f = open('text/user.txt', 'r', encoding='utf8')
-        #s = f.readlines()
         if password == repassword:
             if User.objects.filter(username=username).exists():
                 messages.info(request,'Username นี้มีคนใช้แล้ว')
@@ -70,12 +65,8 @@ def signup(request):
         else:
             messages.info(request,'รหัสผ่านไม่ตรงกัน')
             return render(request, 'signup.html')
-        f.close
         ans = username + ' ' + password + ' ' + fname + ' ' + lname + email + ' ' + '\n'
-        f = open('text/user.txt', 'a', encoding='utf8')
-        f.write(ans)
-        f.close
-        return render(request, 'signup.html', {'press': 2})  # ลงทะเบียนสำเร็จ
+        return render(request, 'signup.html')  # ลงทะเบียนสำเร็จ
     return render(request, 'signup.html')  # เข้าหน้าเว็บปกติ
 
 
