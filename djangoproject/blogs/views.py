@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
+from django.contrib.auth import get_user_model
 from django.contrib import messages
 from datastruct import views
 from .models import dataDoctor,Disease
@@ -11,6 +12,7 @@ def home(request):
 
 def addForm(request):
     if request.method == 'POST':
+        name=request.user.first_name
         date = request.POST['date']
         time = request.POST['time']
         symptom = request.POST['symptom']
@@ -28,7 +30,9 @@ def addForm(request):
                     # คิวที่จะจองเต็ม
                     messages.info(request,'คิวเต็ม')
                     return render(request, 'addForm.html')
-        qform.enQ(date + '_' + time + '_' + symptom + '_' + number + '\n')
+        qform.enQ(date + '_' + time + '_' + name + '_' + number + '_' + symptom + '\n')
+        sort=views.sorting()
+        sort.sortDate(qform.show())
         ans = ''
         for i in qform.show():
             ans += i
@@ -95,7 +99,19 @@ def personnel(request):
 
 
 def userInformation(request):
-    return render(request, 'userInformation.html')
+    name=request.user.first_name
+    form = open('text/form.txt', 'r', encoding='utf8')
+    strform = form.readlines()
+    form.close()
+    stack=views.Stack()
+    lst=[]
+    for i in range(len(strform)-1,-1,-1):
+        if strform[i].split('_')[2] == name:
+            stack.push(strform[i])
+    while stack.lst!=[]:
+        lst.append(stack.peek())
+        stack.pop()
+    return render(request, 'userInformation.html',{'list':lst})
 
 #รายชื่อโรค
 def disease(request):

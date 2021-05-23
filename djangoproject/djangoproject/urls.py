@@ -25,12 +25,10 @@ urlpatterns = [
     path('addForm',views.addForm),      #จอง
     path('',views.signin),              #login
     path('signin',views.signin),     
-    path('signup',views.signup),        #register
-    path('check',views.check),          
+    path('signup',views.signup),        #register     
     path('personnel',views.personnel),  #ของหมอ
     path('userInformation',views.userInformation),
     path('disease',views.disease),
     path('about',views.about),
-
 
 ]

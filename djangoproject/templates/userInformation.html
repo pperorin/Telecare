@@ -7,5 +7,15 @@
 <a class="previous">ประวัติส่วนตัว</a><br>
 <a class="previous">ประวัติการรักษา</a><br>
 <a class="previous">ตารางนัดแพทย์</a><br>
-<a class="previous">ยา</a><br>
+<!-- search หา วันเวลาที่หา-->
+<form class="form-inline ml-3" action="", method="POST">
+    <div class="input-group">
+      <input type="text" name="title" class="form-control" placeholder="Search">
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-warning"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </form>
+<!-- search หา วันเวลาที่หา-->
+{{list}}
 {% endblock%}
