@@ -35,24 +35,23 @@ class Queue:
         return self.lst
 
 class sorting:
-    
-    def sortcheckin(self,num):
-        a=[]
+    def sortDate(self, num):
+        a = []
         for i in num:
-            a.append(i.split()[9])
-        for i in range(len(a)-1,-1,-1):
+            a.append(i)
+        for i in range(len(a)-1, -1, -1):
             for b in range(i):
                 if int(a[b].split("/")[0]) > int(a[b+1].split("/")[0]):
-                     a[b],a[b+1] = a[b+1],a[b]
-                     num[b],num[b+1] = num[b+1],num[b]
-        for i in range(len(a)-1,-1,-1):
+                    a[b], a[b+1] = a[b+1], a[b]
+                    num[b], num[b+1] = num[b+1], num[b]
+        for i in range(len(a)-1, -1, -1):
             for b in range(i):
                 if int(a[b].split("/")[1]) > int(a[b+1].split("/")[1]):
-                     a[b],a[b+1] = a[b+1],a[b]
-                     num[b],num[b+1] = num[b+1],num[b]
-        for i in range(len(a)-1,-1,-1):
+                    a[b], a[b+1] = a[b+1], a[b]
+                    num[b], num[b+1] = num[b+1], num[b]
+        for i in range(len(a)-1, -1, -1):
             for b in range(i):
                 if int(a[b].split("/")[2]) > int(a[b+1].split("/")[2]):
-                     a[b],a[b+1] = a[b+1],a[b]
-                     num[b],num[b+1] = num[b+1],num[b]    
+                    a[b], a[b+1] = a[b+1], a[b]
+                    num[b], num[b+1] = num[b+1], num[b]
         return num
