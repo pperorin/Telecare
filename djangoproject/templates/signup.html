@@ -1,4 +1,7 @@
-{%extends 'layout.html' %} {% block content %}
+{% comment %} {%extends 'layout.html' %}  {% endcomment %}
+{% load static %}
+    <link rel="stylesheet" href="{%static 'css/style_signup.css' %}" />
+{% block content %}
 
 <title>Sign Up</title>
 <div class="headSignup">
@@ -12,82 +15,99 @@
   </div>
 </div>
 
-{% if messages %}
+{% comment %} {% if messages %}
 <div class="alert alert-danger" role="alert">
   {% for message in messages %}
   <b>{{message}}</b>
   {% endfor %}
 </div>
-{% endif %}
-<form method="POST" action="signup">
-  {% csrf_token %}
-  <label for="fname">Username</label>
-  <input
-    type="text"
-    placeholder="Enter your name"
-    id="username"
-    name="username"
-  />
-  <label for="password">Password</label>
-  <br />
-  <input
-    type="password"
-    placeholder="Enter your password"
-    id="password"
-    name="password"
-  />
-  <!--แก้ขนาดกล่องนี้ให้หน่อย-->
-  <br />
-  <label for="rename">Re-Password</label>
-  <br />
-  <input
-    type="password"
-    id="repassword"
-    placeholder="Match your password"
-    name="repassword"
-  />
-  <!--แก้ขนาดกล่องนี้ให้หน่อย-->
-  <br />
-  <br />
-  <label for="fname">First Name</label>
-  <input
-    type="text"
-    placeholder="Enter your first name"
-    id="fname"
-    name="fname"
-  />
-  <label for="lname">Last Name</label>
-  <input
-    type="text"
-    placeholder="Enter your last name"
-    id="lname"
-    name="lname"
-  />
-  <label for="email">Email</label>
-  <input
-    type="text"
-    placeholder="Enter your email"
-    id="email"
-    name="email"
-  />
-  <div class="gender details">
-    <span class="gender-title">Gender</span>
-    <div class="category">
-      <label for="">
-        <span class="dot one"></span>
-        <span class="gender">Male</span>
-      </label>
-      <label for="">
-        <span class="dot one"></span>
-        <span class="gender">Female<span>
-      </label>
-      <label for="">
-        <span class="dot one"></span>
-        <span class="gender">Others</span>
-      </label>
+{% endif %} {% endcomment %}
+
+<body>
+  <form method="POST" action="signup">
+    {% csrf_token %}
+    <div class="title">Registration</div>
+
+    <div class="user_details">
+      <div class="input_box">
+        <label class="details" for="fname">Username</label>
+        <input
+          type="text"
+          placeholder="Enter your name"
+          id="username"
+          name="username"
+        />
+      </div>
+      <div class="input_box">
+        <label class="details" for="password">Password</label>
+        <input
+          type="password"
+          placeholder="Enter your password"
+          id="password"
+          name="password"
+        />
+      </div>
+      <div class="input_box">
+        <label class="details" for="rename">Re-Password</label>
+        <input
+          type="password"
+          id="repassword"
+          placeholder="Match your password"
+          name="repassword"
+        />
+      </div>
+      <div class="input_box">
+        <label class="details" for="fname">First Name</label>
+        <input
+          type="text"
+          placeholder="Enter your first name"
+          id="fname"
+          name="fname"
+        />
+      </div>
+      <div class="input_box">
+        <label class="details" for="lname">Last Name</label>
+        <input
+          type="text"
+          placeholder="Enter your last name"
+          id="lname"
+          name="lname"
+        />
+      </div>
+      <div class="input_box">
+        <label class="details" for="email">Email</label>
+        <input
+          type="text"
+          placeholder="Enter your email"
+          id="email"
+          name="email"
+        />
+      </div>
+      <div class="gender_details">
+        <input type="radio" name="gender" id="dot_1">
+        <input type="radio" name="gender" id="dot_2">
+        <input type="radio" name="gender" id="dot_3">
+        <span class="gender_title">Gender</span>
+        <div class="category">
+          <label for="dot_1">
+            <span class="dot_one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot_2">
+            <span class="dot_two"></span>
+            <span class="gender">Female<span>
+          </label>
+          <label for="dot_3">
+            <span class="dot_three"></span>
+            <span class="gender">Others</span>
+          </label>
+        </div>
+      </div>
     </div>
-  </div>
-  <button type="submit" class="button button1" ,>Submit</button>
-</form>
+    <div class='buttonRegis'>
+      <button type="submit" class="button" ,>Submit</button>
+    </div>
+  </form>
+</body>
 
 {% endblock%}
