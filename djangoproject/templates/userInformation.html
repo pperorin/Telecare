@@ -1,11 +1,24 @@
 {%extends 'layout.html' %}
 
 {% block content %}
+<style>
+  .container {
+    padding: 2rem 0rem;
+  }
+
+  h4 {
+    margin: 2rem 0rem 1rem;
+  }
+
+  .table-image, td,th {
+    vertical-align: middle;
+
+  }
+</style>
+
 <title>ข้อมูลผู้ใช้</title>
 <a>ชื่อผู้ใช้: {{user.first_name}}</a><br>
 <a>นามสกุล: {{user.last_name}}</a><br>
-<a class="previous">ประวัติส่วนตัว</a><br>
-<a class="previous">ประวัติการรักษา</a><br>
 <a class="previous">ตารางนัดแพทย์</a><br>
 <!-- search หา วันเวลาที่หา-->
 {% if messages %}
@@ -24,8 +37,25 @@
   </div>
 </form>
 <!-- search หา วันเวลาที่หา-->
-{% for data in list %}
-<a>{{data}}</a><br>
-{% endfor %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-image">
+        <thead>
+          <tr>
+            <th scope="col">&nbsp; Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time &nbsp;&nbsp; Symptom</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in datas %}
+          <tr>
+            <td>{{data}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 {{checkdate}}
 {% endblock%}

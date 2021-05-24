@@ -106,14 +106,23 @@ def userInformation(request):
     form = open('text/form.txt', 'r', encoding='utf8')
     strform = form.readlines()
     form.close()
-    stack=views.Stack()
     lst=[]
+    stack=views.Stack()
+    dates=[]
+    times=[]
+    symptom=[]
+    datas=[]
     for i in range(len(strform)-1,-1,-1):
         if strform[i].split('_')[2] == name:
             stack.push(strform[i])
     while stack.lst!=[]:
-        lst.append(stack.peek())
+        data=list(stack.peek().split("_"))
+        dates.append(data[0])
+        times.append(data[1])
+        symptom.append(data[4])
         stack.pop()
+    for i in range(len(dates)):
+        datas.append(dates[i] + '\t' + times[i] + '\t' + symptom[i])
     if request.method =="POST":
         date=request.POST['date']
         print(date)
@@ -122,14 +131,28 @@ def userInformation(request):
             #เช็ควันที่จอง
             if checkdate == date:
                 return render(request, 'userInformation.html',{'checkdate':i})
-        
-    return render(request, 'userInformation.html',{'list':lst})
+    return render(request, 'userInformation.html',{'datas':datas})
+
+def about(request):
+    return render(request, 'about.html')
 
 #รายชื่อโรค
 def disease(request):
     datas = Disease.objects.all()
     return render(request, 'disease.html',{'datas':datas})
 
-
-def about(request):
-    return render(request, 'about.html')
+#All Disease
+def bone(request):
+    return render(request, 'bone.html')
+def cancer(request):
+    return render(request, 'cancer.html')
+def heart(request):
+    return render(request,'heart.html')
+def dental(request):
+    return render(request,'dental.html')
+def digestivesystem(request):   #ทางเดินอาหาร
+    return render(request,'digestivesystem.html')
+def pediatric(request):         #โรคในเด็ก
+    return render(request,'pediatric.html')
+def brain(request):
+    return render(request,'brain.html')

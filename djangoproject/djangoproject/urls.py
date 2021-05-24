@@ -31,4 +31,14 @@ urlpatterns = [
     path('disease',views.disease),
     path('about',views.about),
 
+    #All Disease
+    path('cancer',views.cancer),
+    path('bone',views.bone),
+    path('heart',views.heart),
+    path('dental',views.dental),
+    path('digestivesystem',views.digestivesystem),
+    path('pediatric',views.pediatric),
+    path('brain',views.brain),
+    #path('',views.),
+
 ]
