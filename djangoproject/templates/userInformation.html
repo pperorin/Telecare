@@ -8,14 +8,24 @@
 <a class="previous">ประวัติการรักษา</a><br>
 <a class="previous">ตารางนัดแพทย์</a><br>
 <!-- search หา วันเวลาที่หา-->
-<form class="form-inline ml-3" action="", method="POST">
-    <div class="input-group">
-      <input type="text" name="title" class="form-control" placeholder="Search">
-      <div class="input-group-append">
-        <button type="submit" class="btn btn-warning"><i class="fas fa-search"></i></button>
-      </div>
+{% if messages %}
+<div class="alert alert-danger" role="alert">
+  {% for message in messages %}
+  <b>{{message}}</b>
+  {% endfor %}
+</div>
+{% endif %}
+<form action="userInformation" method="POST">{% csrf_token %}
+  <div class="input-group">
+    <input type="date" id="date" name="date" class="form-control" placeholder="Search">
+    <div class="input-group-append">
+      <button type="submit" class="btn btn-warning"><i class="fas fa-search"></i></button>
     </div>
-  </form>
+  </div>
+</form>
 <!-- search หา วันเวลาที่หา-->
-{{list}}
+{% for data in list %}
+<a>{{data}}</a><br>
+{% endfor %}
+{{checkdate}}
 {% endblock%}

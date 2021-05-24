@@ -17,6 +17,9 @@ def addForm(request):
         time = request.POST['time']
         symptom = request.POST['symptom']
         number = request.POST['number']
+        if date=='' or time=='':
+            messages.info(request,'โปรดใส่วันเวลา')
+            return render(request, 'addForm.html')
         #localtime = time.localtime(1623742123)
         form = open('text/form.txt', 'r', encoding='utf8')
         sform = form.readlines()
@@ -111,6 +114,15 @@ def userInformation(request):
     while stack.lst!=[]:
         lst.append(stack.peek())
         stack.pop()
+    if request.method =="POST":
+        date=request.POST['date']
+        print(date)
+        for i in lst:
+            checkdate=i.split('_')[0]
+            #เช็ควันที่จอง
+            if checkdate == date:
+                return render(request, 'userInformation.html',{'checkdate':i})
+        
     return render(request, 'userInformation.html',{'list':lst})
 
 #รายชื่อโรค
