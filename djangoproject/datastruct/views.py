@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 class Stack:
     def __init__(self,lst = None):
         self.lst = lst if lst is not None else []
@@ -38,7 +37,7 @@ class sorting:
     def sortDate(self, num):
         a = []
         for i in num:
-            a.append(i)
+            a.append(i.split('_')[0])
         for i in range(len(a)-1, -1, -1):
             for b in range(i):
                 if int(a[b].split("/")[0]) > int(a[b+1].split("/")[0]):
