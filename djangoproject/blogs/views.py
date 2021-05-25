@@ -106,12 +106,12 @@ def userInformation(request):
     form = open('text/form.txt', 'r', encoding='utf8')
     strform = form.readlines()
     form.close()
-    lst=[]
     stack=views.Stack()
     dates=[]
     times=[]
     symptom=[]
     datas=[]
+    ans=[]
     for i in range(len(strform)-1,-1,-1):
         if strform[i].split('_')[2] == name:
             stack.push(strform[i])
@@ -122,17 +122,31 @@ def userInformation(request):
         symptom.append(data[4])
         stack.pop()
     for i in range(len(dates)):
-        datas.append(dates[i] + '\t' + times[i] + '\t' + symptom[i])
+        datas.append(dates[i] + ' ' + times[i] + ' ' + symptom[i])
     if request.method =="POST":
-        date=request.POST['date']
-        print(date)
-        for i in lst:
-            checkdate=i.split('_')[0]
-            #เช็ควันที่จอง
-            if checkdate == date:
-                return render(request, 'userInformation.html',{'checkdate':i})
-    return render(request, 'userInformation.html',{'datas':datas})
-
+        checkdate=request.POST['date']
+        if checkdate != '':
+            for i in datas:
+                date=i.split(' ')[0]
+                #เช็ควันที่จอง
+                if date == checkdate:
+                    ans.append(i)
+            if len(ans)>1:
+                return render(request, 'userInformation.html',{'datas':ans,'press':0})
+            elif len(ans)>0:
+                return render(request, 'userInformation.html',{'datas':ans[0],'press':1})
+            else:
+                return render(request, 'userInformation.html',{'press':2})
+        else:
+            return render(request, 'userInformation.html',{'press':3})
+    #มีdata หลายตัว
+    elif len(datas)>1:
+        return render(request, 'userInformation.html',{'datas':datas,'press':0})
+    elif len(datas)>0:
+        return render(request, 'userInformation.html',{'datas':datas[0],'press':1})
+    else:
+        return render(request, 'userInformation.html',{'press':2})
+        
 def about(request):
     return render(request, 'about.html')
 
