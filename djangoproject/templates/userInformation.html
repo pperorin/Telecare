@@ -47,15 +47,30 @@
           </tr>
         </thead>
         <tbody>
-          {% for data in datas %}
+          {% if press == 0 %}
+            {% for data in datas %}
+            <tr>
+              <td>{{data}}</td>
+            </tr>
+            {% endfor %}
+          {% elif press == 1 %}
           <tr>
-            <td>{{data}}</td>
+            <td>{{datas}}</td>
           </tr>
-          {% endfor %}
+          {% elif press == 2 %}
+          <tr>
+            <td>ไม่พบข้อมูล</td>
+          </tr>
+          {% elif press == 3 %}
+          <tr>
+            <td>ใส่วันที่ต้องการค้นหา</td>
+          </tr>
+          {% endif %}
         </tbody>
       </table>
     </div>
   </div>
 </div>
 {{checkdate}}
+{{ans}}
 {% endblock%}
