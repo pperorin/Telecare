@@ -1,0 +1,58 @@
+.row1 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.row2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.row3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.buttonDi {
+  padding: 5px 15px 5px 15px;
+  border-radius: 10px;
+  border: none;
+  color: black;
+}
+
+.btnDi1 {
+  background-color: green;
+}
+
+.btnDi2 {
+  background-color: green;
+}
+
+.btnDi3 {
+  background-color: green;
+}
+
+.btnDi4 {
+  background-color: green;
+}
+
+.btnDi5 {
+  background-color: green;
+}
+
+.btnDi6 {
+  background-color: green;
+}
+
+.btnDi7 {
+  background-color: green;
+}

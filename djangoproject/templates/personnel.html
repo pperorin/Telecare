@@ -1,19 +1,4 @@
-{%extends 'layout.html' %}
-<style>
-  .container {
-    padding: 2rem 0rem;
-  }
-
-  h4 {
-    margin: 2rem 0rem 1rem;
-  }
-
-  .table-image, td,th {
-    vertical-align: middle;
-
-  }
-</style>
-{% block content %}
+{%extends 'layout.html' %} {% block content %}
 <div class="container">
   <div class="row">
     <div class="col-12">
@@ -23,15 +8,17 @@
             <th scope="col">Image</th>
             <th scope="col">Name</th>
             <th scope="col">Expertise</th>
-
           </tr>
         </thead>
         <tbody>
           {% for data in datas %}
           <tr>
             <td class="w-25">
-              <img src={{data.imageUrl}}
-                class="img-fluid img-thumbnail" alt="Doctor">
+              <img
+                src="{{data.imageUrl}}"
+                class="img-fluid img-thumbnail"
+                alt="Doctor"
+              />
             </td>
             <td>{{data.name}}</td>
             <td>{{data.expertise}}</td>
@@ -43,3 +30,19 @@
   </div>
 </div>
 {% endblock%}
+
+<style>
+  .container {
+    padding: 2rem 0rem;
+  }
+
+  h4 {
+    margin: 2rem 0rem 1rem;
+  }
+
+  .table-image,
+  td,
+  th {
+    vertical-align: middle;
+  }
+</style>
