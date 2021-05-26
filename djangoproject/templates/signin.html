@@ -2,15 +2,18 @@
 <link rel="stylesheet" href="{%static 'css/styleMain.css' %}">
 {% block content %}
 
-
-{% comment %} <title>Sign in</title> {% endcomment %}
-        {% if messages %}
-        <div class="alert alert-danger" role="alert">
-          {% for message in messages %}
-          <b>{{message}}</b>
-          {% endfor %}
-        </div>
-        {% endif %}
+  {% if messages %}
+  {% comment %} <div class="alert alert-danger" role="alert">
+    {% for message in messages %}
+    <b>{{message}}</b>
+    {% endfor %}
+  </div> {% endcomment %}
+  <script>
+  function myFunction() {
+    alert("Wrong password or username.Please try again.");
+  }
+  </script>
+  {% endif %}
       
   <body>
         <div class="login-wrapper">

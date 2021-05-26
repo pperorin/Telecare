@@ -59,6 +59,8 @@ def signup(request):
                 return redirect('/signup')
             elif User.objects.filter(email=email).exists():
                 messages.info(request,'Email นี้เคยลงทะเบียนไว้แล้ว')
+            elif username=='' or password=='' or repassword=='' or fname=='' or lname=='' or email=='':
+                messages.info(request,'โปรดกรอกข้อมูลให้ครบถ้วน')
             else:
                 user = User.objects.create_user(
                     username=username,
@@ -90,10 +92,6 @@ def signin(request):
             messages.info(request,'ไม่พบข้อมูล')
             return redirect('/')
     return render(request, 'signin.html')
-
-
-def check(request):
-    return render(request, 'check.html')
 
 #รายชื่อหมอ
 def personnel(request):
