@@ -1,0 +1,72 @@
+.UserInfoPage {
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  text-align: center;
+  background: linear-gradient(135deg, #28313b, #485461, #434343, #000000);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: white;
+}
+
+.userNameInfo {
+  margin-right: 2.5rem;
+  font-weight: 650;
+  font-size: 20px;
+}
+
+.surNameInfo {
+  margin-right: 2.5rem;
+  font-weight: 650;
+  font-size: 20px;
+}
+
+.emailInfo {
+  margin-right: 2.5rem;
+  font-weight: 650;
+  font-size: 20px;
+}
+
+.genderInfo {
+  margin-right: 2.5rem;
+  font-weight: 650;
+  font-size: 20px;
+}
+
+.previous {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-left: 43.5rem;
+  width: 450px;
+  font-weight: 850;
+  font-size: 25px;
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+form {
+  width: 600px;
+  margin-left: 39rem;
+}
+
+form .input-group {
+  border: 2px solid black;
+}

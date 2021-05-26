@@ -1,6 +1,4 @@
-{%extends 'layout.html' %}
-
-{% block content %}
+{%extends 'layout.html' %} {% block content %}
 <style>
   .container {
     padding: 2rem 0rem;
@@ -10,16 +8,22 @@
     margin: 2rem 0rem 1rem;
   }
 
-  .table-image, td,th {
+  .table-image,
+  td,
+  th {
     vertical-align: middle;
-
   }
 </style>
 
 <title>ข้อมูลผู้ใช้</title>
-<a>ชื่อผู้ใช้: {{user.first_name}}</a><br>
-<a>นามสกุล: {{user.last_name}}</a><br>
-<a class="previous">ตารางนัดแพทย์</a><br>
+<div class="UserInfoPage">
+    <div class="userNameInfo">Name : {{user.first_name}}</div>
+    <div class="surNameInfo">Surname : {{user.last_name}}</div>
+    <div class="emailInfo">Email : phattarphat@abc.com</div>
+    <div class="genderInfo">Gender : Male</div>
+  </div>
+</div>
+<div class="previous">Doctor Appointment Schedule</div>
 <!-- search หา วันเวลาที่หา-->
 {% if messages %}
 <div class="alert alert-danger" role="alert">
@@ -28,11 +32,20 @@
   {% endfor %}
 </div>
 {% endif %}
-<form action="userInformation" method="POST">{% csrf_token %}
+<form action="userInformation" method="POST">
+  {% csrf_token %}
   <div class="input-group">
-    <input type="date" id="date" name="date" class="form-control" placeholder="Search">
+    <input
+      type="date"
+      id="date"
+      name="date"
+      class="form-control"
+      placeholder="Search"
+    />
     <div class="input-group-append">
-      <button type="submit" class="btn btn-warning"><i class="fas fa-search"></i></button>
+      <button type="submit" class="btn btn-warning">
+        <i class="fas fa-search"></i>
+      </button>
     </div>
   </div>
 </form>
@@ -43,18 +56,18 @@
       <table class="table table-image">
         <thead>
           <tr>
-            <th scope="col">&nbsp; Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time &nbsp;&nbsp; Symptom</th>
+            <th scope="col">
+              &nbsp; Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time
+              &nbsp;&nbsp; Symptom
+            </th>
           </tr>
         </thead>
         <tbody>
-          {% if press == 0 %}
-            {% for data in datas %}
-            <tr>
-              <td>{{data}}</td>
-            </tr>
-            {% endfor %}
-
-          {% elif press == 1 %}
+          {% if press == 0 %} {% for data in datas %}
+          <tr>
+            <td>{{data}}</td>
+          </tr>
+          {% endfor %} {% elif press == 1 %}
           <tr>
             <td>{{datas}}</td>
           </tr>
@@ -63,7 +76,7 @@
           <tr>
             <td>ไม่พบข้อมูล</td>
           </tr>
-          
+
           {% elif press == 3 %}
           <tr>
             <td>ใส่วันที่ต้องการค้นหา</td>
@@ -74,6 +87,4 @@
     </div>
   </div>
 </div>
-{{checkdate}}
-{{ans}}
-{% endblock%}
+{{checkdate}} {{ans}} {% endblock%}
