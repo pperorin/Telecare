@@ -22,37 +22,78 @@
   justify-content: center;
 }
 
+.coverBox {
+  width: 33%;
+  padding: 0 8px;
+}
+
+.Box {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  background: linear-gradient(135deg, #28313b, #485461, #434343, #000);
+  background-size: 400% 400%;
+  animation: gradient 7s ease infinite;
+  height: 425px;
+}
+
+.imageDi {
+  width: 100%;
+  height: 300px;
+}
+
+h5 {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 0.25rem;
+  font-weight: 750;
+  font-size: 20px;
+  color: whitesmoke;
+  position: relative;
+}
+
+h5::before {
+  content: "";
+  position: absolute;
+  left: 4;
+  bottom: 0;
+  height: 3px;
+  width: 118px;
+  background: linear-gradient(135deg, #ffd9b3, white);
+}
+
 .buttonDi {
-  padding: 5px 15px 5px 15px;
-  border-radius: 10px;
+  width: 140px;
+  height: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  color: white;
+  background-color: #ffd9b3;
   border: none;
-  color: black;
+  border-radius: 25px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 8.5rem;
+  text-decoration: none;
 }
 
-.btnDi1 {
-  background-color: green;
+.buttonDi:hover {
+  background-color: #ffd9b3;
+  box-shadow: 0px 2px 6px whitesmoke;
+  color: #fff;
+  transform: translateY(-4px);
+  text-decoration: none;
 }
 
-.btnDi2 {
-  background-color: green;
-}
-
-.btnDi3 {
-  background-color: green;
-}
-
-.btnDi4 {
-  background-color: green;
-}
-
-.btnDi5 {
-  background-color: green;
-}
-
-.btnDi6 {
-  background-color: green;
-}
-
-.btnDi7 {
-  background-color: green;
+a .buttonDi {
+  text-decoration: none;
 }

@@ -1,7 +1,6 @@
 {%extends 'layout.html' %} {% block content %}
 <title>Add Form</title>
 <div class="content">
-<<<<<<< HEAD
   <iframe
     src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%234285F4&amp;ctz=Asia%2FBangkok&amp;src=Y19xcnZtOGJxdm1nNGhpdDlndWE1NmpjNnNhb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23795548&amp;title=Doctor%20appointment%20schedule&amp;showTitle=1&amp;showNav=1&amp;showTabs=0&amp;showCalendars=1&amp;showTz=0&amp;mode=MONTH"
     style="border: solid 1px #777"
@@ -10,10 +9,6 @@
     frameborder="0"
     scrolling="no"
   ></iframe>
-=======
-  <script type="text/javascript" src="https://stylemygcal.com/widget.js"></script>
-  <div class="smgc-calendar-placeholder" id="smgc-cal-c8VQYLd3rwSuSLc8ifIh"></div>
->>>>>>> 6b8417534e5dce470eae2a9a4c244423ed1ec4e5
 </div>
 {% if messages %}
 <div class="alert alert-danger" role="alert">
@@ -26,7 +21,6 @@
 <body>
   <form method="POST" action="addForm">
     {% csrf_token %}
-<<<<<<< HEAD
     <label for="date">Date</label>
     <input type="date" id="date" name="date" min="2021-05-29" />
     <label for="time">time</label>
@@ -47,20 +41,6 @@
     <label for="number">Telephone number</label>
     <input type="text" id="number" name="number" value="09xxxxxxxx" />
     <button type="submit" class="button button1" ,>Add</button>
-=======
-    <div class="content" style="padding-top: 15px;">
-      <label for="date" style="font-family: 'Mitr', sans-serif;font-weight:500; font-size: 24px; color: #00007A;">Date</label><br>
-      <input style="padding: 10px; height: 40px; width: 30%; border-radius: 8px;" type="date" id="date" name="date" min="2021-05-29"> <br>
-      <label style="padding-top: 15px; font-family: 'Mitr', sans-serif;font-weight:500; font-size: 24px; color: #00007A;" for="time">time</label><br>
-      <input style="padding: 10px; height: 40px; width: 30%; border-radius: 8px;" type="time" id="time" name="time" min="08.00" max="17.00"><br>
-      <label for="symptom" style="padding-top: 15px; font-family: 'Mitr', sans-serif;font-weight:500; font-size: 24px; color: #00007A;" >อาการป่วย</label> <br>
-      <input style="padding: 10px; height: 40px; width: 30%; border-radius: 8px;" type="text" id="symptom" name="symptom"
-        value="ปวดหัว ตัวร้อน กินไม่ได้ นอนไม่หลับ กระส่าย กระ สับ ตับพิการ อาหารไม่ย่อย"><br>
-      <label style="padding-top: 15px; font-family: 'Mitr', sans-serif;font-weight:500; font-size: 24px; color: #00007A;" for="number">Telephone number</label><br>
-      <input style="padding: 10px; height: 40px; width: 30%; border-radius: 8px;" type="text" id="number" name="number" value='09xxxxxxxx'><br>
-      <button style="margin-top: 25px;" type="submit" class="btn btn-outline-primary" >Add</button>
-    </div>
->>>>>>> 6b8417534e5dce470eae2a9a4c244423ed1ec4e5
   </form>
   <div style="height: 50px;"></div>
 </body>
