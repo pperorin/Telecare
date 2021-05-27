@@ -45,30 +45,11 @@ h5 {
   padding-top: 1.5rem;
   padding-bottom: 0.5rem;
   text-align: center;
-<<<<<<< Updated upstream
-=======
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
->>>>>>> Stashed changes
   font-weight: 750;
   font-size: 24px;
   color: whitesmoke;
 }
 
-<<<<<<< HEAD
-=======
-h5::before {
-  content: "";
-  position: absolute;
-  left: 4;
-  bottom: 0;
-  height: 3px;
-  width: 118px;
-  margin-bottom: 10px;
-  background: linear-gradient(135deg, #ffffff, white);
-}
-
->>>>>>> 7cbe25e452ce32d973219dcfe30beac03590fbfe
 .buttonDi {
   width: 140px;
   height: 25px;
@@ -90,12 +71,8 @@ h5::before {
   justify-content: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
-<<<<<<< Updated upstream
   margin-left: auto;
   margin-right: auto;
-=======
-  margin:0 auto;
->>>>>>> Stashed changes
   text-decoration: none;
 }
 
