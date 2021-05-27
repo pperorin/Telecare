@@ -4,12 +4,14 @@ from django.contrib.auth import get_user_model
 from django.contrib import messages
 from datastruct import views
 from .models import dataDoctor,Disease
-# Create your views here.
+from datetime import datetime, timedelta
+from ggcalendar import view
 
+# Create your views here.
 
 def home(request):
     return render(request, 'index.html')
-
+    
 def addForm(request):
     if request.method == 'POST':
         name=request.user.first_name
@@ -20,7 +22,6 @@ def addForm(request):
         if date=='' or time=='':
             messages.info(request,'โปรดใส่วันเวลา')
             return render(request, 'addForm.html')
-        #localtime = time.localtime(1623742123)
         form = open('text/form.txt', 'r', encoding='utf8')
         sform = form.readlines()
         form.close()
@@ -33,6 +34,7 @@ def addForm(request):
                     # คิวที่จะจองเต็ม
                     messages.info(request,'คิวเต็ม')
                     return render(request, 'addForm.html')
+        view.create_event(date,int(time))
         qform.enQ(date + '_' + time + '_' + name + '_' + number + '_' + symptom + '\n')
         sort=views.sorting()
         sort.sortDate(qform.show())
@@ -70,6 +72,8 @@ def signup(request):
                     email=email,
                 )
                 user.save()
+                user=auth.authenticate(username=username,password=password)
+                auth.login(request,user)
                 return redirect('/home')
         else:
             messages.info(request,'รหัสผ่านไม่ตรงกัน')
@@ -120,7 +124,7 @@ def userInformation(request):
         symptom.append(data[4])
         stack.pop()
     for i in range(len(dates)):
-        datas.append(dates[i] + ' ' + times[i] + ' ' + symptom[i])
+        datas.append(dates[i] + ' ' + times[i] + ':00 ' + symptom[i])
     if request.method =="POST":
         checkdate=request.POST['date']
         if checkdate != '':
