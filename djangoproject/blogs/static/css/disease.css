@@ -43,6 +43,11 @@
 
 h5 {
   text-align: center;
+<<<<<<< Updated upstream
+=======
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+>>>>>>> Stashed changes
   font-weight: 750;
   font-size: 20px;
   color: whitesmoke;
@@ -55,7 +60,8 @@ h5::before {
   bottom: 0;
   height: 3px;
   width: 118px;
-  background: linear-gradient(135deg, #ffd9b3, white);
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #ffffff, white);
 }
 
 .buttonDi {
@@ -67,7 +73,7 @@ h5::before {
   letter-spacing: 2.5px;
   font-weight: 600;
   color: white;
-  background-color: #ffd9b3;
+  background-color: #ffffff;
   border: none;
   border-radius: 25px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -79,13 +85,17 @@ h5::before {
   justify-content: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
+<<<<<<< Updated upstream
   margin-left: auto;
   margin-right: auto;
+=======
+  margin:0 auto;
+>>>>>>> Stashed changes
   text-decoration: none;
 }
 
 .buttonDi:hover {
-  background-color: #ffd9b3;
+  background-color: #a3c0ff;
   box-shadow: 0px 2px 6px whitesmoke;
   color: #fff;
   transform: translateY(-4px);
