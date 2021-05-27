@@ -62,11 +62,11 @@
   }
 }
 
-form {
+.fixForm {
   width: 600px;
   margin-left: 39rem;
 }
 
-form .input-group {
+.fixForm .input-group {
   border: 2px solid black;
 }
