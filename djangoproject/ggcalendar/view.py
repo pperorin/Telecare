@@ -51,8 +51,3 @@ def create_event(startdate,starttime):
     ).execute()
 
     print(event_result)
-
-
-                            #"start": {"dateTime": startdate + 'T' + starttime + ':00+07:00'},
-                            #"end": {
-                             #"dateTime": (startdate + 'T' + str(int(starttime)+1) + ':00+07:00')

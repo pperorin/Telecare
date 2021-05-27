@@ -22,7 +22,6 @@ def addForm(request):
         if date=='' or time=='':
             messages.info(request,'โปรดใส่วันเวลา')
             return render(request, 'addForm.html')
-        #localtime = time.localtime(1623742123)
         form = open('text/form.txt', 'r', encoding='utf8')
         sform = form.readlines()
         form.close()
@@ -73,6 +72,8 @@ def signup(request):
                     email=email,
                 )
                 user.save()
+                user=auth.authenticate(username=username,password=password)
+                auth.login(request,user)
                 return redirect('/home')
         else:
             messages.info(request,'รหัสผ่านไม่ตรงกัน')
